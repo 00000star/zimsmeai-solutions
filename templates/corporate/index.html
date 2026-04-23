@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{BUSINESS_NAME}} | {{TAGLINE}}</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <meta property="og:title" content="{{BUSINESS_NAME}} | {{TAGLINE}}">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero.jpg">
+  <link rel="icon" href="images/logo.png">
+  <link rel="canonical" href="https://{DOMAIN}/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="{{BUSINESS_NAME}} logo">
+      <span>{{BUSINESS_NAME}}</span>
+    </a>
+    <button class="mobile-toggle" data-mobile-toggle>Menu</button>
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="team.html">Team</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn secondary" href="https://wa.me/{{WHATSAPP_NUMBER}}">WhatsApp</a>
+      <a class="btn primary" href="contact.html">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">{{EYEBROW_TEXT}}</div>
+        <h1>{{HERO_TITLE}}</h1>
+        <p>{{HERO_SUBTITLE}}</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0 2rem;">
+          <a class="btn primary" href="contact.html">{{PRIMARY_CTA_TEXT}}</a>
+          <a class="btn secondary" href="services.html">{{SECONDARY_CTA_TEXT}}</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="kpi">{{STAT_1_VALUE}}</div><div class="muted">{{STAT_1_LABEL}}</div></div>
+          <div class="stat"><div class="kpi">{{STAT_2_VALUE}}</div><div class="muted">{{STAT_2_LABEL}}</div></div>
+          <div class="stat"><div class="kpi">{{STAT_3_VALUE}}</div><div class="muted">{{STAT_3_LABEL}}</div></div>
+          <div class="stat"><div class="kpi">{{STAT_4_VALUE}}</div><div class="muted">{{STAT_4_LABEL}}</div></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="images/hero.jpg" alt="{{BUSINESS_NAME}} hero image">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container center">
+      <div class="eyebrow">Why clients choose us</div>
+      <h2>{{SECTION_1_TITLE}}</h2>
+      <p>{{SECTION_1_SUBTITLE}}</p>
+      <div class="cards" style="margin-top:2rem;">
+        <article class="card">
+          <h3>{{FEATURE_1_TITLE}}</h3>
+          <p>{{FEATURE_1_TEXT}}</p>
+        </article>
+        <article class="card">
+          <h3>{{FEATURE_2_TITLE}}</h3>
+          <p>{{FEATURE_2_TEXT}}</p>
+        </article>
+        <article class="card">
+          <h3>{{FEATURE_3_TITLE}}</h3>
+          <p>{{FEATURE_3_TEXT}}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2>{{ABOUT_TITLE}}</h2>
+        <p>{{ABOUT_TEXT}}</p>
+        <ul class="list-clean">
+          <li>{{ABOUT_POINT_1}}</li>
+          <li>{{ABOUT_POINT_2}}</li>
+          <li>{{ABOUT_POINT_3}}</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <img src="images/about.jpg" alt="{{BUSINESS_NAME}} about image">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container center">
+      <div class="eyebrow">Services</div>
+      <h2>What we do</h2>
+      <div class="grid-3" style="margin-top:2rem;">
+        <article class="service-card">
+          <h3>{{SERVICE_1_NAME}}</h3>
+          <p>{{SERVICE_1_DESC}}</p>
+        </article>
+        <article class="service-card">
+          <h3>{{SERVICE_2_NAME}}</h3>
+          <p>{{SERVICE_2_DESC}}</p>
+        </article>
+        <article class="service-card">
+          <h3>{{SERVICE_3_NAME}}</h3>
+          <p>{{SERVICE_3_DESC}}</p>
+        </article>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a class="btn primary" href="services.html">See all services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container center">
+      <div class="eyebrow">Proof</div>
+      <h2>Selected work</h2>
+      <div class="blog-grid" style="margin-top:2rem;">
+        <article class="post-card">
+          <h3>{{CASE_STUDY_1_TITLE}}</h3>
+          <p>{{CASE_STUDY_1_TEXT}}</p>
+        </article>
+        <article class="post-card">
+          <h3>{{CASE_STUDY_2_TITLE}}</h3>
+          <p>{{CASE_STUDY_2_TEXT}}</p>
+        </article>
+        <article class="post-card">
+          <h3>{{CASE_STUDY_3_TITLE}}</h3>
+          <p>{{CASE_STUDY_3_TEXT}}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <div class="grid-2" style="align-items:center;">
+          <div>
+            <div class="eyebrow" style="color:white;">Let's talk</div>
+            <h2>Ready to move forward?</h2>
+            <p>{{CTA_BAND_TEXT}}</p>
+          </div>
+          <div style="display:flex;gap:1rem;justify-content:flex-end;flex-wrap:wrap;">
+            <a class="btn secondary" href="https://wa.me/{{WHATSAPP_NUMBER}}">WhatsApp us</a>
+            <a class="btn primary" style="background:white;color:var(--primary);" href="contact.html">Request a quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>{BUSINESS_NAME}</h3>
+      <p>{TAGLINE}</p>
+      <p>Email: {EMAIL}<br>Phone: {PHONE}<br>WhatsApp: {WHATSAPP_NUMBER}</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="about.html">About</a></p>
+      <p><a href="services.html">Services</a></p>
+      <p><a href="contact.html">Contact</a></p>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <p><a href="privacy.html">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms & Conditions</a></p>
+    </div>
+  </div>
+  <div class="container" style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);margin-top:1.5rem;">
+    <p class="small">© {CURRENT_YEAR} {BUSINESS_NAME}. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

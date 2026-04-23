@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{BUSINESS_NAME}} | {{TAGLINE}}</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <meta name="keywords" content="{{META_KEYWORDS}}">
+    <meta property="og:title" content="{{BUSINESS_NAME}}">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="images/hero.jpg">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: {{PRIMARY_COLOR}};
+            --primary-dark: {{PRIMARY_DARK}};
+            --primary-light: {{PRIMARY_LIGHT}};
+            --accent: {{ACCENT_COLOR}};
+            --text: #111827;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-subtle: #f9fafb;
+            --border: #e5e7eb;
+            --radius: 12px;
+            --radius-lg: 20px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 5%; height: 68px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+        .nav-logo img { height: 38px; object-fit: contain; }
+        .nav-logo-text { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta { background: var(--primary) !important; color: white !important; padding: 0.5rem 1.25rem; border-radius: 8px; }
+        .nav-cta:hover { background: var(--primary-dark) !important; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .hamburger span { width: 24px; height: 2px; background: var(--text); transition: all 0.3s; border-radius: 2px; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            padding: 100px 5% 60px;
+            background: linear-gradient(150deg, #fff 0%, var(--bg-subtle) 100%);
+            position: relative; overflow: hidden;
+        }
+        .hero::after {
+            content: ''; position: absolute; top: -20%; right: -10%;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+            opacity: 0.4; pointer-events: none;
+        }
+        .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--primary-light); color: var(--primary); padding: 0.3rem 0.9rem; border-radius: 100px; font-size: 0.82rem; font-weight: 600; margin-bottom: 1.25rem; }
+        .hero h1 { font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; }
+        .hero h1 em { font-style: normal; color: var(--primary); }
+        .hero p { font-size: 1.05rem; color: var(--text-light); margin-bottom: 2rem; line-height: 1.75; max-width: 480px; }
+        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .btn-wa { background: #25D366; color: white; }
+        .btn-wa:hover { background: #128C7E; transform: translateY(-2px); }
+        .payment-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+        .pay-badge { border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.75rem; font-size: 0.78rem; font-weight: 600; color: var(--text-light); background: white; }
+        .hero-visual { display: flex; justify-content: center; }
+        .hero-visual img { width: 100%; max-width: 500px; border-radius: var(--radius-lg); box-shadow: 0 30px 60px rgba(0,0,0,0.12); object-fit: cover; aspect-ratio: 4/3; }
+        .hero-fallback { width: 100%; max-width: 500px; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 6rem; }
+
+        /* ── TRUST BAR ── */
+        .trust-bar { background: var(--primary); padding: 1.5rem 5%; display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap; }
+        .trust-item { color: white; text-align: center; }
+        .trust-num { display: block; font-size: 1.85rem; font-weight: 800; }
+        .trust-lbl { font-size: 0.8rem; opacity: 0.8; }
+
+        /* ── SECTIONS ── */
+        .section { padding: 80px 5%; }
+        .section-bg { background: var(--bg-subtle); }
+        .sec-head { text-align: center; max-width: 580px; margin: 0 auto 3.5rem; }
+        .sec-label { display: inline-block; color: var(--primary); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.6rem; }
+        .sec-title { font-size: clamp(1.75rem, 2.8vw, 2.4rem); font-weight: 800; line-height: 1.2; margin-bottom: 0.8rem; }
+        .sec-sub { color: var(--text-light); font-size: 1rem; line-height: 1.7; }
+
+        /* ── SERVICES ── */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+        .svc-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all 0.3s; cursor: default; }
+        .svc-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--primary); }
+        .svc-icon { width: 54px; height: 54px; background: var(--primary-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.1rem; }
+        .svc-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .svc-card p { color: var(--text-light); font-size: 0.88rem; line-height: 1.65; }
+
+        /* ── ABOUT ── */
+        .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-img img { width: 100%; border-radius: var(--radius-lg); box-shadow: 0 20px 40px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 1; }
+        .about-img .about-fallback { width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 6rem; }
+        .about-text .sec-label, .about-text .sec-title { text-align: left; }
+        .about-text p { color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
+        .check-list { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.7rem; }
+        .check-item { display: flex; align-items: center; gap: 0.75rem; font-weight: 500; font-size: 0.95rem; }
+        .check-icon { color: var(--primary); font-size: 1.1rem; }
+
+        /* ── CONTACT ── */
+        .contact-wrap { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+        .c-info h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .c-info p { color: var(--text-light); margin-bottom: 1.75rem; line-height: 1.7; }
+        .c-item { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1rem; }
+        .c-icon { width: 44px; height: 44px; background: var(--primary-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+        .c-text strong { display: block; font-weight: 600; font-size: 0.9rem; }
+        .c-text span { color: var(--text-light); font-size: 0.88rem; }
+        .c-form { background: var(--bg-subtle); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; }
+        .c-form h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .form-field { margin-bottom: 1.1rem; }
+        .form-field label { display: block; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.35rem; }
+        .form-field input, .form-field textarea, .form-field select { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--border); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.9rem; background: white; color: var(--text); transition: border-color 0.2s; }
+        .form-field input:focus, .form-field textarea:focus, .form-field select:focus { outline: none; border-color: var(--primary); }
+        .form-field textarea { height: 110px; resize: vertical; }
+        .btn-submit { width: 100%; background: var(--primary); color: white; border: none; padding: 0.85rem; border-radius: 8px; font-family: 'Inter',sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .btn-submit:hover { background: var(--primary-dark); }
+
+        /* ── FOOTER ── */
+        footer { background: #111827; color: white; padding: 3rem 5% 1.5rem; }
+        .footer-top { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .f-brand-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; }
+        .f-brand-desc { color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.7; }
+        .f-col h4 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+        .f-col a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; margin-bottom: 0.5rem; transition: color 0.2s; }
+        .f-col a:hover { color: white; }
+        .footer-bottom { max-width: 1100px; margin: 1.5rem auto 0; display: flex; justify-content: space-between; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+        .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+        /* ── FLOATING WA ── */
+        .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 999; background: #25D366; color: white; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.65rem; box-shadow: 0 4px 20px rgba(37,211,102,0.45); animation: wapulse 2.5s infinite; }
+        .wa-float:hover { transform: scale(1.1); }
+        @keyframes wapulse { 0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); } 50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7); } }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: white; flex-direction: column; padding: 0.5rem 5% 1rem; border-bottom: 1px solid var(--border); gap: 0; }
+            .nav-links.open { display: flex; }
+            .nav-links li { padding: 0.7rem 0; border-bottom: 1px solid var(--border); }
+            .hamburger { display: flex; }
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero p { max-width: 100%; }
+            .hero-btns { justify-content: center; }
+            .hero-visual { order: -1; }
+            .hero-visual img, .hero-fallback { max-width: 260px; }
+            .payment-row { justify-content: center; }
+            .trust-bar { gap: 2rem; }
+            .about-inner { grid-template-columns: 1fr; }
+            .about-text .sec-label, .about-text .sec-title { text-align: center; }
+            .check-list { align-items: flex-start; }
+            .contact-wrap { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="#" class="nav-logo">
+        <img src="images/logo.png" alt="{{BUSINESS_NAME}} logo" onerror="this.style.display='none'">
+        <span class="nav-logo-text">{{BUSINESS_NAME}}</span>
+    </a>
+    <ul class="nav-links" id="nav-menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge">📍 {{LOCATION}}</div>
+            <h1>{{HEADLINE_PART_1}} <em>{{HEADLINE_HIGHLIGHT}}</em>{{HEADLINE_PART_2}}</h1>
+            <p>{{HERO_DESCRIPTION}}</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">Get Started →</a>
+                <a href="https://wa.me/{{WHATSAPP_NUMBER}}" target="_blank" class="btn btn-wa">💬 WhatsApp Us</a>
+            </div>
+            <div class="payment-row">
+                <span class="pay-badge">✓ EcoCash</span>
+                <span class="pay-badge">✓ Innbucks</span>
+                <span class="pay-badge">✓ OneMoney</span>
+                <span class="pay-badge">✓ Bank Transfer</span>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <img src="images/hero.jpg" alt="{{BUSINESS_NAME}}" onerror="this.style.display='none';document.querySelector('.hero-fallback').style.display='flex'">
+            <div class="hero-fallback" style="display:none">🏢</div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="trust-item"><span class="trust-num">{{STAT_1_NUM}}</span><span class="trust-lbl">{{STAT_1_LBL}}</span></div>
+    <div class="trust-item"><span class="trust-num">{{STAT_2_NUM}}</span><span class="trust-lbl">{{STAT_2_LBL}}</span></div>
+    <div class="trust-item"><span class="trust-num">{{STAT_3_NUM}}</span><span class="trust-lbl">{{STAT_3_LBL}}</span></div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+    <div class="sec-head">
+        <span class="sec-label">What We Offer</span>
+        <h2 class="sec-title">{{SERVICES_HEADING}}</h2>
+        <p class="sec-sub">{{SERVICES_SUBHEADING}}</p>
+    </div>
+    <div class="services-grid">
+        <!-- WebBot fills this: one .svc-card per service -->
+        {{SERVICES_CARDS}}
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-bg" id="about">
+    <div class="about-inner">
+        <div class="about-img">
+            <img src="images/about.jpg" alt="About {{BUSINESS_NAME}}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="about-fallback" style="display:none">👥</div>
+        </div>
+        <div class="about-text">
+            <span class="sec-label">Our Story</span>
+            <h2 class="sec-title">{{ABOUT_HEADING}}</h2>
+            <p>{{ABOUT_PARA_1}}</p>
+            <p>{{ABOUT_PARA_2}}</p>
+            <div class="check-list">
+                <div class="check-item"><span class="check-icon">✓</span> {{FEATURE_1}}</div>
+                <div class="check-item"><span class="check-icon">✓</span> {{FEATURE_2}}</div>
+                <div class="check-item"><span class="check-icon">✓</span> {{FEATURE_3}}</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+    <div class="sec-head">
+        <span class="sec-label">Get In Touch</span>
+        <h2 class="sec-title">Let's Work Together</h2>
+        <p class="sec-sub">{{CONTACT_INTRO}}</p>
+    </div>
+    <div class="contact-wrap">
+        <div class="c-info">
+            <h3>Find Us</h3>
+            <p>{{CONTACT_BODY}}</p>
+            <div class="c-item">
+                <div class="c-icon">💬</div>
+                <div class="c-text"><strong>WhatsApp</strong><span>+{{WHATSAPP_DISPLAY}}</span></div>
+            </div>
+            <div class="c-item">
+                <div class="c-icon">📧</div>
+                <div class="c-text"><strong>Email</strong><span>{{EMAIL}}</span></div>
+            </div>
+            <div class="c-item">
+                <div class="c-icon">📍</div>
+                <div class="c-text"><strong>Location</strong><span>{{ADDRESS}}</span></div>
+            </div>
+            <div class="c-item">
+                <div class="c-icon">🕐</div>
+                <div class="c-text"><strong>Hours</strong><span>{{HOURS}}</span></div>
+            </div>
+            <br>
+            <a href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hi%20{{BUSINESS_NAME_ENCODED}}%2C%20I%27d%20like%20to%20enquire" target="_blank" class="btn btn-wa" style="display:inline-flex">💬 Start a WhatsApp Chat</a>
+        </div>
+        <div class="c-form">
+            <h3>Send a Message</h3>
+            <form id="cform">
+                <div class="form-field">
+                    <label>Your Name</label>
+                    <input type="text" name="name" placeholder="Full name" required>
+                </div>
+                <div class="form-field">
+                    <label>WhatsApp / Phone</label>
+                    <input type="tel" name="phone" placeholder="+263 7X XXX XXXX" required>
+                </div>
+                <div class="form-field">
+                    <label>What do you need?</label>
+                    <select name="service">
+                        {{SERVICE_OPTIONS}}
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label>Message</label>
+                    <textarea name="msg" placeholder="Tell us more..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send via WhatsApp →</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-top">
+        <div>
+            <div class="f-brand-name">{{BUSINESS_NAME}}</div>
+            <p class="f-brand-desc">{{FOOTER_TAGLINE}}</p>
+        </div>
+        <div class="f-col">
+            <h4>Services</h4>
+            {{FOOTER_SERVICE_LINKS}}
+        </div>
+        <div class="f-col">
+            <h4>Contact</h4>
+            <a href="https://wa.me/{{WHATSAPP_NUMBER}}">WhatsApp</a>
+            <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+            <a href="#">{{LOCATION}}</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© {{YEAR}} {{BUSINESS_NAME}}. All rights reserved.</span>
+        <a href="https://zimsmeai.co.zw" target="_blank">Website by ZimSME AI</a>
+        <span style="margin-left:1rem;"></span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+    </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hi%20{{BUSINESS_NAME_ENCODED}}%2C%20I%27d%20like%20to%20enquire%20about%20your%20services" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<!-- AI CHATBOT (Tidio — replace key) -->
+<script src="//code.tidio.co/{{TIDIO_KEY}}.js" async></script>
+
+<script>
+    // Mobile nav
+    document.getElementById('hamburger').addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.toggle('open');
+    });
+    document.querySelectorAll('#nav-menu a').forEach(a => {
+        a.addEventListener('click', () => document.getElementById('nav-menu').classList.remove('open'));
+    });
+
+    // Form → WhatsApp
+    document.getElementById('cform').addEventListener('submit', e => {
+        e.preventDefault();
+        const f = e.target;
+        const msg = encodeURIComponent(
+            `Hi {{BUSINESS_NAME}}! 👋\nName: ${f.name.value}\nPhone: ${f.phone.value}\nService: ${f.service.value}\n${f.msg.value}`
+        );
+        window.open(`https://wa.me/{{WHATSAPP_NUMBER}}?text=${msg}`, '_blank');
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.svc-card').forEach(c => {
+        c.style.cssText += 'opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease;';
+        observer.observe(c);
+    });
+</script>
+</body>
+</html>

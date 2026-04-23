@@ -1,0 +1,20 @@
+{
+  "schema": "paperclip-ai-companies/manifest/v1",
+  "slug": "zimsme-ai-solutions",
+  "name": "ZimSME AI Solutions",
+  "status": "active_seed",
+  "score": 73,
+  "wedgeOffer": "Starter Site plus WhatsApp lead-capture setup delivered from structured homework and a QA gate.",
+  "firstBuyer": "Service businesses already selling through WhatsApp but lacking a credible website, lead capture, and follow-up system.",
+  "generatedAt": "2026-04-23T05:48:19.271Z",
+  "files": {
+    "company": "COMPANY.md",
+    "paperclip": ".paperclip.yaml",
+    "operatingModel": "docs/OPERATING_MODEL.md",
+    "unitEconomics": "docs/UNIT_ECONOMICS.md",
+    "riskRegister": "docs/RISK_REGISTER.md",
+    "offerPage": "docs/OFFER_PAGE.md",
+    "intakeSchema": "docs/INTAKE_SCHEMA.md",
+    "outreachPlaybook": "docs/OUTREACH_PLAYBOOK.md"
+  }
+}

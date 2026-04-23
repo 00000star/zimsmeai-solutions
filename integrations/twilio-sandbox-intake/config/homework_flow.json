@@ -1,0 +1,60 @@
+{
+  "greeting": "Welcome to ZimSME AI Solutions \ud83d\udc4b\n\nWe can help with websites, AI automations, business launch support, and app discovery.\n\nPlease reply with one of these options:\n1. Starter Site\n2. Business Site\n3. Premium Site\n4. AI Quick Win\n5. Launch Audit\n6. App Discovery",
+  "steps": [
+    {
+      "key": "package",
+      "prompt": "Great. Which package are you choosing? You can reply with the package name or the number.",
+      "mode": "package"
+    },
+    {
+      "key": "business_name",
+      "prompt": "What is the name of your business?",
+      "mode": "text"
+    },
+    {
+      "key": "business_description",
+      "prompt": "In 2\u20133 sentences, what does your business do, who do you help, and where are you based?",
+      "mode": "text"
+    },
+    {
+      "key": "services",
+      "prompt": "List your main services or products. You can include rough prices if you want.",
+      "mode": "text"
+    },
+    {
+      "key": "target_customer",
+      "prompt": "Who is your ideal customer, and what action do you want visitors to take on the site? (Call, WhatsApp, book, request a quote, visit, etc.)",
+      "mode": "text"
+    },
+    {
+      "key": "contact_details",
+      "prompt": "Please share your WhatsApp number, email, location, and business hours.",
+      "mode": "text"
+    },
+    {
+      "key": "social_links",
+      "prompt": "Send any business social links or usernames. If you have none, reply NONE.",
+      "mode": "text"
+    },
+    {
+      "key": "brand_story",
+      "prompt": "Tell me your business story: when you started, why you started, and what makes you different.",
+      "mode": "text"
+    },
+    {
+      "key": "brand_assets",
+      "prompt": "Now send your logo plus 5 to 10 business images. You can also type your preferred colours or say MATCH THE LOGO. When you are finished sending files, reply DONE.",
+      "mode": "assets"
+    },
+    {
+      "key": "testimonials",
+      "prompt": "Send 1 to 3 testimonials or reviews if you have them. If not, reply NONE.",
+      "mode": "text"
+    },
+    {
+      "key": "special_requests",
+      "prompt": "Any special requests, inspiration sites, must-have features, or layout preferences? If none, reply NONE.",
+      "mode": "text"
+    }
+  ]
+}

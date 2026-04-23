@@ -1,0 +1,242 @@
+schema: paperclip/v1
+company:
+  name: ZimSME AI Solutions
+  description: Zimbabwe-focused AI-assisted websites, automations, consulting, and app discovery company
+  budgetMonthlyCents: 50000
+  timezone: Africa/Harare
+skillsCatalog:
+  html-site-generator:
+    path: skills/html-site-generator/SKILL.md
+    scope: company
+  homework-collector:
+    path: skills/homework-collector/SKILL.md
+    scope: company
+  business-health-check:
+    path: skills/business-health-check/SKILL.md
+    scope: company
+  whatsapp-scripts:
+    path: skills/whatsapp-scripts/SKILL.md
+    scope: company
+agents:
+  ceo:
+    role: ceo
+    title: Chief Executive Officer
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/ceo
+        timeoutSec: 600
+        graceSec: 20
+    runtime:
+      heartbeat:
+        intervalSec: 300
+        maxConcurrentRuns: 1
+    permissions:
+      canCreateAgents: true
+  cto:
+    role: manager
+    icon: cpu
+    title: Chief Technology Officer
+    capabilities: Technical lead. Routes and reviews engineering output from WebBot, AppMaster, and AIExpert. Owns technical QA gates, stack decisions, and incident response.
+    reportsTo: ceo
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/cto
+        timeoutSec: 600
+        graceSec: 20
+  cmo:
+    role: manager
+    icon: megaphone
+    title: Chief Marketing Officer
+    capabilities: Marketing lead. Coordinates GrowthHacker and ResearchLead. Owns pipeline reporting, content calendar, and brand consistency.
+    reportsTo: ceo
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/cmo
+        timeoutSec: 600
+        graceSec: 20
+  frontdesk:
+    role: general
+    icon: message-square
+    title: Client Relations & Sales
+    capabilities: Client intake, package selection, deposit enforcement, homework collection, revision management, handover, and upselling retainers or add-ons.
+    reportsTo: ceo
+    usesSkills:
+      - homework-collector
+      - whatsapp-scripts
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/frontdesk
+        timeoutSec: 600
+        graceSec: 20
+    inputs:
+      env:
+        AGENCY_EMAIL:
+          description: Agency email address
+          kind: plain
+          default: craigzifunzi@gmail.com
+          requirement: optional
+        AGENCY_WHATSAPP:
+          description: Agency WhatsApp number (digits only)
+          kind: plain
+          default: '263785378845'
+          requirement: optional
+        ECOCASH_NUMBER:
+          description: EcoCash payment number
+          kind: plain
+          default: '0785378845'
+          requirement: optional
+        INNBUCKS_NUMBER:
+          description: Innbucks payment number
+          kind: plain
+          default: ''
+          requirement: optional
+  projectops:
+    role: manager
+    icon: folder-kanban
+    title: Project Operations Lead
+    capabilities: Validates client homework completeness, creates clean delivery briefs, tracks stage transitions, enforces deposit-before-build policy, and coordinates handoff between FrontDesk, delivery agents, and QA.
+    reportsTo: ceo
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/projectops
+        timeoutSec: 600
+        graceSec: 20
+  qualitylead:
+    role: general
+    icon: shield-check
+    title: Quality Assurance & Launch Lead
+    capabilities: Reviews every website and automation handoff for completeness, mobile responsiveness, forms, image quality, copy clarity, and deployment readiness before the client sees it.
+    reportsTo: projectops
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/qualitylead
+        timeoutSec: 600
+        graceSec: 20
+  webbot:
+    role: engineer
+    icon: code
+    title: Website Delivery Engineer
+    capabilities: Builds production-ready static HTML, CSS, and JS websites from client homework. Uses starter templates, brand tokens, structured copy, and image assets. Outputs deployable ZIP files for Hostinger or similar hosting.
+    reportsTo: cto
+    usesSkills:
+      - html-site-generator
+      - homework-collector
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/webbot
+        timeoutSec: 900
+        graceSec: 20
+  aiexpert:
+    role: engineer
+    icon: brain
+    title: AI Expert
+    capabilities: Builds practical AI chatbots and workflow automations. Focuses on FAQ bots, lead capture, reminder flows, and internal knowledge helpers before advanced custom AI projects.
+    reportsTo: cto
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/aiexpert
+        timeoutSec: 900
+        graceSec: 20
+  appmaster:
+    role: engineer
+    icon: rocket
+    title: App Discovery & MVP Lead
+    capabilities: Handles app discovery, scoping, clickable prototypes, installable web apps, and carefully-scoped MVPs. Avoids promising large custom apps without an explicit discovery phase.
+    reportsTo: cto
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/appmaster
+        timeoutSec: 900
+        graceSec: 20
+  growthhacker:
+    role: general
+    icon: target
+    title: Marketing & Growth Lead
+    capabilities: Lead generation, outreach, referrals, social proof collection, and weekly pipeline reporting.
+    reportsTo: cmo
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/growthhacker
+        timeoutSec: 600
+        graceSec: 20
+  researchlead:
+    role: researcher
+    icon: microscope
+    title: Research Lead
+    capabilities: Weekly intelligence briefs, competitive analysis, offer research, and SEO content support for client sites and agency growth.
+    reportsTo: cmo
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/researchlead
+        timeoutSec: 600
+        graceSec: 20
+  launchcoach:
+    role: general
+    icon: lightbulb
+    title: Business Launch & Consulting Coach
+    capabilities: Business Health Checks, Launch Ready packages, Growth Sprints, and monthly coaching. Helps people start and improve businesses with grounded next steps.
+    reportsTo: ceo
+    usesSkills:
+      - business-health-check
+      - homework-collector
+      - whatsapp-scripts
+    adapter:
+      type: codex_local
+      config:
+        cwd: /tmp/paperclip/zimsmeai-solutions/launchcoach
+        timeoutSec: 600
+        graceSec: 20
+projects:
+  web-presence-factory:
+    color: '#8b5cf6'
+    status: backlog
+  business-consulting:
+    color: '#06b6d4'
+    status: backlog
+  ai-sme-solutions:
+    color: '#ef4444'
+    status: backlog
+  mobile-app-development:
+    color: '#ec4899'
+    status: backlog
+  marketing-growth:
+    color: '#f97316'
+    status: backlog
+  ai-automation-r-d:
+    color: '#eab308'
+    status: backlog
+  onboarding:
+    color: '#6366f1'
+    status: in_progress
+  operations-delivery:
+    color: '#22c55e'
+    status: in_progress
+routines:
+  whatsapp-client-inbox:
+    priority: high
+    triggers:
+      - kind: webhook
+        label: WhatsApp Bridge
+  business-health-check-request:
+    priority: normal
+    triggers:
+      - kind: webhook
+  client-intake-verification:
+    priority: high
+    triggers:
+      - kind: manual
+  delivery-qa-gate:
+    priority: high
+    triggers:
+      - kind: manual

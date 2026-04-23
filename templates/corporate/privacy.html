@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | {{BUSINESS_NAME}}</title>
+  <meta name="description" content="Privacy policy for {{BUSINESS_NAME}}.">
+  <meta property="og:title" content="Privacy Policy | {{BUSINESS_NAME}}">
+  <meta property="og:description" content="Privacy policy for {{BUSINESS_NAME}}.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero.jpg">
+  <link rel="icon" href="images/logo.png">
+  <link rel="canonical" href="https://{DOMAIN}/privacy.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html">
+      <img src="images/logo.png" alt="{{BUSINESS_NAME}} logo">
+      <span>{{BUSINESS_NAME}}</span>
+    </a>
+    <button class="mobile-toggle" data-mobile-toggle>Menu</button>
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="team.html">Team</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn secondary" href="https://wa.me/{{WHATSAPP_NUMBER}}">WhatsApp</a>
+      <a class="btn primary" href="contact.html">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+
+<main class="section">
+  <article class="container legal spaced">
+    <div class="eyebrow">Privacy</div>
+    <h1>Privacy Policy</h1>
+    <p>This starter privacy policy should be reviewed and adapted for the client’s real business, form tools, tracking setup, and jurisdiction before going live.</p>
+    <h2>Information We Collect</h2>
+    <p>{{PRIVACY_COLLECTION_TEXT}}</p>
+    <h2>How We Use Information</h2>
+    <p>{{PRIVACY_USAGE_TEXT}}</p>
+    <h2>Cookies and Analytics</h2>
+    <p>{{PRIVACY_COOKIES_TEXT}}</p>
+    <h2>Contact</h2>
+    <p>Questions about privacy can be sent to {{EMAIL}}.</p>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>{BUSINESS_NAME}</h3>
+      <p>{TAGLINE}</p>
+      <p>Email: {EMAIL}<br>Phone: {PHONE}<br>WhatsApp: {WHATSAPP_NUMBER}</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="about.html">About</a></p>
+      <p><a href="services.html">Services</a></p>
+      <p><a href="contact.html">Contact</a></p>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <p><a href="privacy.html">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms & Conditions</a></p>
+    </div>
+  </div>
+  <div class="container" style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);margin-top:1.5rem;">
+    <p class="small">© {CURRENT_YEAR} {BUSINESS_NAME}. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

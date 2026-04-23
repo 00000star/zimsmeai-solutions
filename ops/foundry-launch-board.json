@@ -1,0 +1,247 @@
+{
+  "schema": "paperclip-ai-companies/launch-board/v1",
+  "company": "ZimSME AI Solutions",
+  "slug": "zimsme-ai-solutions",
+  "generatedAt": "2026-04-23T05:48:19.276Z",
+  "columns": [
+    {
+      "id": "offer",
+      "title": "Offer",
+      "cards": [
+        {
+          "id": "lock-wedge-offer",
+          "title": "Lock wedge offer",
+          "detail": "Package: Starter Site plus WhatsApp lead-capture setup delivered from structured homework and a QA gate.",
+          "owner": "ceo",
+          "status": "todo"
+        },
+        {
+          "id": "write-public-boundaries",
+          "title": "Write public boundaries",
+          "detail": "Selling custom apps before discovery. Starting delivery before complete client homework. Weak QA causing cheap-agency perception. Overpromising AI automation without fallback paths.",
+          "owner": "ceo",
+          "status": "todo"
+        },
+        {
+          "id": "set-first-price-ladder",
+          "title": "Set first price ladder",
+          "detail": "Entry $180, core $450, premium $1200",
+          "owner": "ceo",
+          "status": "todo"
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "title": "Proof",
+      "cards": [
+        {
+          "id": "create-before-after-website-screenshots",
+          "title": "Create Before/after website screenshots.",
+          "detail": "Make this visible before outreach.",
+          "owner": "growthhacker",
+          "status": "todo"
+        },
+        {
+          "id": "create-demo-whatsapp-intake-flow",
+          "title": "Create Demo WhatsApp intake flow.",
+          "detail": "Make this visible before outreach.",
+          "owner": "growthhacker",
+          "status": "todo"
+        },
+        {
+          "id": "create-three-industry-specific-starter-sites",
+          "title": "Create Three industry-specific starter sites.",
+          "detail": "Make this visible before outreach.",
+          "owner": "growthhacker",
+          "status": "todo"
+        },
+        {
+          "id": "create-qa-checklist-showing-mobile-links-forms-and-handoff-checks",
+          "title": "Create QA checklist showing mobile, links, forms, and handoff checks.",
+          "detail": "Make this visible before outreach.",
+          "owner": "growthhacker",
+          "status": "todo"
+        }
+      ]
+    },
+    {
+      "id": "intake",
+      "title": "Intake",
+      "cards": [
+        {
+          "id": "what-does-your-business-sell-and-who-buys-most-often",
+          "title": "What does your business sell and who buys most often?",
+          "detail": "Convert into form, WhatsApp script, or checklist.",
+          "owner": "frontdesk",
+          "status": "todo"
+        },
+        {
+          "id": "what-should-customers-do-first-whatsapp-call-book-visit-or-pay-deposit",
+          "title": "What should customers do first: WhatsApp, call, book, visit, or pay deposit?",
+          "detail": "Convert into form, WhatsApp script, or checklist.",
+          "owner": "frontdesk",
+          "status": "todo"
+        },
+        {
+          "id": "what-services-prices-locations-photos-testimonials-and-faqs-can-you-provide",
+          "title": "What services, prices, locations, photos, testimonials, and FAQs can you provide?",
+          "detail": "Convert into form, WhatsApp script, or checklist.",
+          "owner": "frontdesk",
+          "status": "todo"
+        },
+        {
+          "id": "which-repeated-whatsapp-questions-waste-the-most-time",
+          "title": "Which repeated WhatsApp questions waste the most time?",
+          "detail": "Convert into form, WhatsApp script, or checklist.",
+          "owner": "frontdesk",
+          "status": "todo"
+        },
+        {
+          "id": "what-would-make-this-project-successful-30-days-after-launch",
+          "title": "What would make this project successful 30 days after launch?",
+          "detail": "Convert into form, WhatsApp script, or checklist.",
+          "owner": "frontdesk",
+          "status": "todo"
+        }
+      ]
+    },
+    {
+      "id": "outreach",
+      "title": "Outreach",
+      "cards": [
+        {
+          "id": "send-outreach-angle",
+          "title": "Send outreach angle",
+          "detail": "Your business is already selling through WhatsApp; the missing piece is a trust-building website and lead flow.",
+          "owner": "growthhacker",
+          "status": "todo"
+        },
+        {
+          "id": "send-outreach-angle",
+          "title": "Send outreach angle",
+          "detail": "I can turn your existing WhatsApp answers into a clean site and enquiry system.",
+          "owner": "growthhacker",
+          "status": "todo"
+        },
+        {
+          "id": "send-outreach-angle",
+          "title": "Send outreach angle",
+          "detail": "You do not need a huge app first. Start with a credibility site, lead capture, and follow-up discipline.",
+          "owner": "growthhacker",
+          "status": "todo"
+        }
+      ]
+    },
+    {
+      "id": "delivery",
+      "title": "Delivery",
+      "cards": [
+        {
+          "id": "lead-captured",
+          "title": "Lead captured",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        },
+        {
+          "id": "package-selected",
+          "title": "Package selected",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        },
+        {
+          "id": "deposit-confirmed",
+          "title": "Deposit confirmed",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        },
+        {
+          "id": "homework-complete",
+          "title": "Homework complete",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        },
+        {
+          "id": "delivery-brief-approved",
+          "title": "Delivery brief approved",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        },
+        {
+          "id": "build",
+          "title": "Build",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        },
+        {
+          "id": "qa-gate",
+          "title": "QA gate",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        },
+        {
+          "id": "client-review",
+          "title": "Client review",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        },
+        {
+          "id": "final-handoff",
+          "title": "Final handoff",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        },
+        {
+          "id": "follow-up-and-upsell",
+          "title": "Follow-up and upsell",
+          "detail": "Define owner, done condition, and handoff.",
+          "owner": "projectops",
+          "status": "todo"
+        }
+      ]
+    },
+    {
+      "id": "qa",
+      "title": "QA",
+      "cards": [
+        {
+          "id": "guardrail-selling-custom-apps-before-discovery",
+          "title": "Guardrail: Selling custom apps before discovery.",
+          "detail": "Add to QA gate and offer boundary.",
+          "owner": "qualitylead",
+          "status": "todo"
+        },
+        {
+          "id": "guardrail-starting-delivery-before-complete-client-homework",
+          "title": "Guardrail: Starting delivery before complete client homework.",
+          "detail": "Add to QA gate and offer boundary.",
+          "owner": "qualitylead",
+          "status": "todo"
+        },
+        {
+          "id": "guardrail-weak-qa-causing-cheap-agency-perception",
+          "title": "Guardrail: Weak QA causing cheap-agency perception.",
+          "detail": "Add to QA gate and offer boundary.",
+          "owner": "qualitylead",
+          "status": "todo"
+        },
+        {
+          "id": "guardrail-overpromising-ai-automation-without-fallback-paths",
+          "title": "Guardrail: Overpromising AI automation without fallback paths.",
+          "detail": "Add to QA gate and offer boundary.",
+          "owner": "qualitylead",
+          "status": "todo"
+        }
+      ]
+    }
+  ]
+}

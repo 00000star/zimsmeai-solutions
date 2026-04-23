@@ -1,0 +1,24 @@
+{
+  "company": "ZimSME AI Solutions",
+  "headline": "Starter Site plus WhatsApp lead-capture setup delivered from structured homework and a QA gate.",
+  "firstBuyer": "Service businesses already selling through WhatsApp but lacking a credible website, lead capture, and follow-up system.",
+  "pricing": {
+    "entry": 180,
+    "core": 450,
+    "premium": 1200,
+    "retainer": 120
+  },
+  "boundaries": [
+    "Selling custom apps before discovery.",
+    "Starting delivery before complete client homework.",
+    "Weak QA causing cheap-agency perception.",
+    "Overpromising AI automation without fallback paths."
+  ],
+  "intakeQuestions": [
+    "What does your business sell and who buys most often?",
+    "What should customers do first: WhatsApp, call, book, visit, or pay deposit?",
+    "What services, prices, locations, photos, testimonials, and FAQs can you provide?",
+    "Which repeated WhatsApp questions waste the most time?",
+    "What would make this project successful 30 days after launch?"
+  ]
+}
