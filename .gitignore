@@ -7,6 +7,8 @@ node_modules/
 __pycache__/
 .pytest_cache/
 jobs/
+integrations/twilio-sandbox-intake/data/jobs/
+integrations/twilio-sandbox-intake/data/sessions/
 uploads/
 tmp/
 dist/
