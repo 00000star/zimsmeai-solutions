@@ -232,11 +232,3 @@ routines:
     priority: normal
     triggers:
       - kind: webhook
-  client-intake-verification:
-    priority: high
-    triggers:
-      - kind: manual
-  delivery-qa-gate:
-    priority: high
-    triggers:
-      - kind: manual
